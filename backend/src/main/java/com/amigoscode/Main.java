@@ -25,6 +25,7 @@ public class Main {
 
     @Bean
     CommandLineRunner runner(CustomerRepository customerRepository){
+
         return args -> {
             var faker = new Faker();
             Random random = new Random();
@@ -36,6 +37,7 @@ public class Main {
                     firstName.toLowerCase() + "." + lastName.toLowerCase()+"@amigoscode.com",
                     random.nextInt(16, 99)
             );
+
             customerRepository.save(customer);
 
         };
